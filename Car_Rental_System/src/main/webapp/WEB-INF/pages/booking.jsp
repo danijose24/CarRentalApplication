@@ -27,7 +27,8 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     
     <!-- Load SCRIPT.JS which will create datepicker for input field  -->
-    
+    <link rel="stylesheet" type="text/css" media="all" href="/webjars/bootstrap-datepicker/1.3.1/css/datepicker.css" />
+    <script type="text/javascript" src="/webjars/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.js"></script>
   </head>
   <body>
   <div id="main">
@@ -98,11 +99,11 @@
     <table>
            <tr>
                <td><h3 style="color:silver"> Pick Date&nbsp;&nbsp;&nbsp;&nbsp;</h3></td>
-               <td><input required style="color:black;" type="text" id="pickupDate" name="pickupDate" class="form-control" placeholder="MM/DD/YYYY"/> </td>
+               <td><input required style="color:black;" type="date" id="pickupDate" name="pickupDate" class="form-control" placeholder="MM/DD/YYYY"/> </td>
            </tr>         
            <tr>
                <td><h3 style="color:silver">Drop Date</h3></td>
-               <td><input required style="color:black;" type="text" id="dropDate" name="dropDate" class="form-control" placeholder="MM/DD/YYYY"/> </td>
+               <td><input required style="color:black;" type="date" id="dropDate" name="dropDate" class="form-control" placeholder="MM/DD/YYYY"/> </td>
               
            </tr>   
             <tr>
@@ -117,6 +118,17 @@
     
     
       </center>
+      <script type="text/javascript">
+           $(document).ready(function() {
+           $('.pickupDate').datepicker({format: "mm/dd/yyyy", weekStart: "0"});
+           });
+       </script>
+       
+       <script type="text/javascript">
+           $(document).ready(function() {
+           $('.dropDate').datepicker({format: "mm/dd/yyyy", weekStart: "0"});
+           });
+       </script>
     
     </form>
 
@@ -134,30 +146,10 @@
   
   </div>
   </body>
-  <script>
-  $(document).ready(
-  
-  /* This is the function that will get executed after the DOM is fully loaded */
-  function () {
-    $( "#pickupDate" ).datepicker({
-      changeMonth: true,//this option for allowing user to select month
-      changeYear: true //this option for allowing user to select from year range
-    });
-  }
 
-);
-  </script>
-  <script>
-  $(document).ready(
   
-  /* This is the function that will get executed after the DOM is fully loaded */
-  function () {
-    $( "#dropDate" ).datepicker({
-      changeMonth: true,//this option for allowing user to select month
-      changeYear: true //this option for allowing user to select from year range
-    });
-  }
-
-);
-  </script>
+  
+       
+  
+  
 </html>

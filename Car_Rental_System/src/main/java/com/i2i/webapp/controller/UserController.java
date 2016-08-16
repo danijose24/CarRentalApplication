@@ -6,11 +6,15 @@ import com.i2i.exception.UserDefinedException;
 import com.i2i.model.Booking;
 import com.i2i.model.Car;
 import com.i2i.model.Make;
+import com.i2i.model.User;
 import com.i2i.service.BookingService;
 import com.i2i.service.CarService;
 import com.i2i.service.MakeService;
 import com.i2i.service.UserManager;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -103,29 +107,30 @@ public class UserController {
     private int tempCarId ;
     
     @RequestMapping("/bookingSuccess")	
-	public ModelAndView booking(@ModelAttribute("booking") Booking booking,BindingResult result) {
+	public ModelAndView booking(@RequestParam("pickupDate") String pickupDate, @RequestParam("dropDate") String dropDate, @ModelAttribute("booking") Booking booking,BindingResult result) {
 	    
 		Map<String, Booking> model = new HashMap<String, Booking>();
 		try {
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			Date d1 = df.parse(pickupDate);
+			Date d2 = df.parse(dropDate);
+			java.sql.Date pickup_Date = new java.sql.Date(d1.getTime());
+	        java.sql.Date drop_Date = new java.sql.Date(d2.getTime());
+			booking.setPickupDate(pickup_Date);
+			booking.setDropDate(drop_Date);
 		    confirmBooking = booking;
-		    System.out.println("get Booking Car controller");
-		    System.out.println(booking.getPickupDate());
-		    System.out.println(booking.getDropDate());
-		    System.out.println(tempCarId);
-		    System.out.println("after values of booking and car Id");
 		    Car car = carService.findCarById(tempCarId);
-		    Date d1 = booking.getPickupDate();
-            Date d2 = booking.getDropDate();
             long difference = d2.getTime() - d1.getTime();
             int dayDifference = (int) (long) difference;
             int totalDays = dayDifference / (24 * 60 * 60 * 1000);
             totalDays = totalDays + 1;
-            System.out.println(totalDays +"days");
             int amount = car.getMake().getRate() * totalDays;
             booking.setAmount(amount);
 	        model.put("booking", booking);
 	    } catch (UserDefinedException e) {
 		    System.out.println(e);
+        } catch (ParseException e) {
+            e.printStackTrace();     
         }
 			return new ModelAndView("confirmBooking", model);
 	}
@@ -190,10 +195,13 @@ public class UserController {
 	}
     
     @RequestMapping("/finalBooking")
-	public ModelAndView finalBooking() {
+	public ModelAndView finalBooking( @RequestParam("userName") String userName) {
     	try {
 		    Car car = carService.findCarById(tempCarId);
 		    confirmBooking.setCar(car);
+		    User user = userManager.getUserByUsername(userName);
+		    System.out.println(user);
+		    confirmBooking.setUser(user);
 		    bookingService.addBooking(confirmBooking);
 	    } catch (UserDefinedException e) {
 	    	e.printStackTrace();

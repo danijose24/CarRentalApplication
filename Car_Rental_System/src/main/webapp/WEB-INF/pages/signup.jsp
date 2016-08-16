@@ -3,7 +3,12 @@
 <head>
     <title><fmt:message key="signup.title"/></title>
 </head>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <body class="signup"/>
 
 <div class="col-sm-2">

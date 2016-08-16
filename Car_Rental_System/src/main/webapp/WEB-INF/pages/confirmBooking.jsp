@@ -61,6 +61,7 @@
                       <div style="color: teal;font-size: 30px">Booking Details</div>
                       <br>
                       <form action="finalBooking.html">
+                      <input type="hidden" id="userName" name="userName" value="${pageContext.request.remoteUser}"/>
                           <c:if test="${!empty booking}">
                           <p>Pickup Date : <c:out value="${booking.pickupDate}"/></p>
                           <p>Drop Date : <c:out value="${booking.dropDate}"/></p>
