@@ -1,0 +1,9 @@
+com/i2i/webapp/controller/UserFormControllerTest.class
+com/i2i/webapp/filter/LocaleFilterTest.class
+com/i2i/webapp/controller/SignupControllerTest.class
+com/i2i/webapp/controller/UserControllerTest.class
+com/i2i/webapp/controller/BaseControllerTestCase.class
+com/i2i/webapp/listener/StartupListenerTest.class
+com/i2i/webapp/controller/UpdatePasswordControllerTest.class
+com/i2i/webapp/filter/MockFilterChain.class
+com/i2i/webapp/controller/PasswordHintControllerTest.class
