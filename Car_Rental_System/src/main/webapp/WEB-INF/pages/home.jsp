@@ -84,7 +84,7 @@
 	
 	  <div id="content">
         <div class="content_item">
-		  <h1>ABOUT QUICK CAR</h1> 
+		  <h1 style="color:silver">ABOUT QUICK CAR</h1> 
               <p>&nbsp; &nbsp; &nbsp; &nbsp;Quick Car is a 2009 established self drive car rental service launched by young businessmen .
                  As a successful service, the motive is to bring the concept in Chennai and get people drive miles with their personal space and freedom in convenient and luxurious manner.
                  We have several Car Rental plans such as economy, budget, luxury etc to accommodate the needs of our multitude of clients.
