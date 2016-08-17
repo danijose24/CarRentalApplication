@@ -4,7 +4,7 @@
     <!--database>
         <jndi-name>jdbc/appfuse</jndi-name>
         <driver type="com.mysql.jdbc.Driver">
-            <url>jdbc:mysql://localhost/Car_Rental_System?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true</url>
+            <url>jdbc:mysql://localhost/CarRentalApp?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true</url>
             <user>root</user>
             <password>root</password>
         </driver>

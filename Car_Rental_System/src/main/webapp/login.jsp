@@ -1,8 +1,18 @@
 <%@ include file="/common/taglibs.jsp" %>
 
-<head>
-    <title><fmt:message key="login.title"/></title>
-    <meta name="menu" content="Login"/>
+<head >
+  <title>CarRentalSystem</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="scripts/modernizr-1.5.min.js"></script>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <br>
 <br>
@@ -15,9 +25,10 @@
 
 <form method="post" id="loginForm" action="<c:url value='/j_security_check'/>"
     onsubmit="saveUsername(this);return validateForm(this)" class="form-signin" autocomplete="off">
+    <center>
     <h2 class="form-signin-heading">
         <fmt:message key="login.heading"/>
-    </h2>
+    </h2> </center>
 <c:if test="${param.error != null}">
     <div class="alert alert-danger alert-dismissable">
         <fmt:message key="errors.password.mismatch"/>
@@ -37,6 +48,7 @@
     <button type="submit" class="btn btn-lg btn-primary btn-block" name="login" tabindex="4">
         <fmt:message key='button.login'/>
     </button>
+   
 </form>
 
 <p>
@@ -52,5 +64,5 @@
 <p><fmt:message key="login.passwordHint"/></p>
 
 <p><fmt:message key="updatePassword.requestRecoveryTokenLink"/></p>
-
+</center>
 </body>

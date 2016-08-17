@@ -1,35 +1,19 @@
 <html>
-  <head>
-  
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <meta charset="utf-8">
-   <meta name="description" content="website description" />
-   <meta name="keywords" content="website keywords, website keywords" />
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  
-   <link rel="stylesheet" type="text/css" href="css/style.css" />
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-  
-   <!-- modernizr enables HTML5 elements and feature detects -->
+<head >
+  <title>CarRentalSystem</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="scripts/modernizr-1.5.min.js"></script>
  
-   <script src="js/jquery.min.js"></script>
-   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-  
-    <!-- Load jQuery from Google's CDN -->
-    <!-- Load jQuery UI CSS  -->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    
-    <!-- Load jQuery JS -->
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!-- Load jQuery UI Main JS  -->
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    
-    <!-- Load SCRIPT.JS which will create datepicker for input field  -->
-    <link rel="stylesheet" type="text/css" media="all" href="/webjars/bootstrap-datepicker/1.3.1/css/datepicker.css" />
-    <script type="text/javascript" src="/webjars/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.js"></script>
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
   <body>
   <div id="main">
     <header>

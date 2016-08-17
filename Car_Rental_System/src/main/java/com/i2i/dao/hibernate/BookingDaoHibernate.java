@@ -45,6 +45,7 @@ public class BookingDaoHibernate extends GenericDaoHibernate<Booking, Long> impl
 	    try {
             getSession().saveOrUpdate(booking);
 	    } catch (HibernateException e) {
+	    	System.out.println(e);
 	        throw new UserDefinedException("Booking details added Failed!...",e);
 	    }
 	}
