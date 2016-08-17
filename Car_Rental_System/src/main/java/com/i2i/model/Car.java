@@ -4,6 +4,7 @@
 package com.i2i.model;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,7 +46,7 @@ public class Car {
 	private String imageUrl;
 	
 	@Column(name="createdAt")
-    private Time createdAt;
+    private Timestamp createdAt;
 	
 	@OneToMany(mappedBy="car")
     private Set<Booking> bookings = new HashSet<Booking>();
@@ -143,14 +144,14 @@ public class Car {
 	/**
 	 * @return the createdAt
 	 */
-	public Time getCreatedAt() {
+	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
 
 	/**
 	 * @param createdAt the createdAt to set
 	 */
-	public void setCreatedAt(Time createdAt) {
+	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
 

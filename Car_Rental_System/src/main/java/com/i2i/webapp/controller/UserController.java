@@ -149,7 +149,7 @@ public class UserController {
 	public ModelAndView addNewCar(@ModelAttribute("car") Car car,BindingResult result) {
 		try {
 		    System.out.println(car);
-		    java.sql.Time createdAt = new java.sql.Time(new java.util.Date().getTime());
+		    java.sql.Timestamp createdAt = new java.sql.Timestamp(new java.util.Date().getTime());
             car.setCreatedAt(createdAt);
             System.out.println(createdAt);
 		    carService.addCar(car);

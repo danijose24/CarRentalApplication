@@ -84,7 +84,7 @@ public class CarDaoHibernate extends GenericDaoHibernate<Car, Long> implements C
 	    try {
 	        car = (Car)getSession().get(Car.class, carId);
 	    } catch (HibernateException e) {
-	        throw new UserDefinedException("Can not able to find for this car Id: "+carId, e);
+	        throw new UserDefinedException("Can not find this car Id: "+carId, e);
 	    }
 	    return car;
 	}

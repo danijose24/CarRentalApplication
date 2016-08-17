@@ -9,13 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<c:url value="/images/favicon.ico"/>"/>
     <title><decorator:title/> | <fmt:message key="webapp.name"/></title>
-    <t:assets type="css"/>
-    <decorator:head/>
+   
+   
 </head>
-<body<decorator:getProperty property="body.id" writeEntireProperty="true"/><decorator:getProperty property="body.class" writeEntireProperty="true"/>>
+<body>
     <c:set var="currentMenu" scope="request"><decorator:getProperty property="meta.menu"/></c:set>
 
-  
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+       
+        <%@ include file="/common/menu.jsp" %>
+        <c:if test="${pageContext.request.locale.language ne 'en'}">
+            <div id="switchLocale"><a href="<c:url value='/?locale=en'/>">
+                <fmt:message key="webapp.name"/> in English</a>
+            </div>
+        </c:if>
+    </div>
 
     <div class="container" id="content">
         <%@ include file="/common/messages.jsp" %>
@@ -32,8 +40,6 @@
         </div>
     </div>
 
-   
-<t:assets type="js"/>    
-<%= (request.getAttribute("scripts") != null) ?  request.getAttribute("scripts") : "" %>
+
 </body>
 </html>
