@@ -28,9 +28,9 @@
 	<nav>
 	  <div id="menubar">
         <ul id="nav">
-          <li class="current"><a href="mainHome.html">Home</a></li>
+          <li class="current"><a href="home.html">Home</a></li>
           <li><a href="availableCar.html">Available Cars</a></li>
-          <li><a href="admin.html">Admin</a></li>
+          <li><a href="logout.jsp">LogOut</a></li>
         </ul>
       </div><!--close menubar-->	
     </nav>

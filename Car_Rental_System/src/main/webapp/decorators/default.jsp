@@ -15,8 +15,6 @@
 <body<decorator:getProperty property="body.id" writeEntireProperty="true"/><decorator:getProperty property="body.class" writeEntireProperty="true"/>>
     <c:set var="currentMenu" scope="request"><decorator:getProperty property="meta.menu"/></c:set>
 
-  
-
     <div class="container" id="content">
         <%@ include file="/common/messages.jsp" %>
         <div class="row">

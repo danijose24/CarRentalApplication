@@ -7,10 +7,12 @@ import com.i2i.model.Booking;
 import com.i2i.model.Car;
 import com.i2i.model.Make;
 import com.i2i.model.User;
+import com.i2i.model.Role;
 import com.i2i.service.BookingService;
 import com.i2i.service.CarService;
 import com.i2i.service.MakeService;
 import com.i2i.service.UserManager;
+import com.i2i.service.UserService;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -20,6 +22,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,6 +64,9 @@ public class UserController {
     @Autowired
     BookingService bookingService;
     
+    @Autowired
+    UserService userService;
+    
     @RequestMapping("/admin/users*")
     public ModelAndView handleRequest(@RequestParam(required = false, value = "q") String query) throws Exception {
         Model model = new ExtendedModelMap();
@@ -86,10 +93,21 @@ public class UserController {
 		return new ModelAndView("availableCars", model);
 	}
     
-    @RequestMapping("/mainHome")
-	public ModelAndView mainHomePage() {
+    @RequestMapping("/home")
+	public ModelAndView mainHomePage(final HttpServletRequest request) {
 		System.out.println("entering into main pages");
-		return new ModelAndView("home");
+		
+	    	String userName = request.getRemoteUser();
+			User user = userService.getUserByUsername(userName);
+	        if(null != user) {
+	        	Set<Role> roles = user.getRoles();
+	        	for(Role role : roles){
+	        		if("ROLE_ADMIN".equals(role.getName())) {
+	        			return new ModelAndView("adminHome");
+	        		}
+	        	}
+	        }
+    	return new ModelAndView("home");
 	}
     
     @RequestMapping(value = "/bookCar")
@@ -156,7 +174,7 @@ public class UserController {
 		} catch(UserDefinedException e) {
 			System.out.println(e);
 		}
-		return new ModelAndView("home");
+		return new ModelAndView("adminHome");
 	}
     
     @RequestMapping("/addMake")
@@ -171,7 +189,7 @@ public class UserController {
 		} catch(UserDefinedException e) {
 			System.out.println(e);
 		}
-		return new ModelAndView("admin");
+		return new ModelAndView("adminHome");
 	}
     
     @RequestMapping("/assignMakeToCar")
@@ -191,7 +209,7 @@ public class UserController {
 		} catch(UserDefinedException e) {
 			System.out.println(e);
 		}
-		return new ModelAndView("admin");
+		return new ModelAndView("adminHome");
 	}
     
     @RequestMapping("/finalBooking")
@@ -202,6 +220,8 @@ public class UserController {
 		    User user = userManager.getUserByUsername(userName);
 		    System.out.println(user);
 		    confirmBooking.setUser(user);
+		    java.sql.Timestamp createdAt = new java.sql.Timestamp(new java.util.Date().getTime());
+		    confirmBooking.setCreatedAt(createdAt);
 		    bookingService.addBooking(confirmBooking);
 	    } catch (UserDefinedException e) {
 	    	e.printStackTrace();

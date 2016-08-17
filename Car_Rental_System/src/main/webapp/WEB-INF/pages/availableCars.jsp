@@ -34,7 +34,7 @@
 	<nav>
 	  <div id="menubar">
         <ul id="nav">
-          <li><a href="mainHome.html">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li class="current"><a href="availableCar.html">Available Cars</a></li>
          
         </ul>

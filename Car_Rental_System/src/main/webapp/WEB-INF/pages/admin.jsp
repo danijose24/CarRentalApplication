@@ -35,9 +35,9 @@
 	<nav>
 	  <div id="menubar">
         <ul id="nav">
-          <li><a href="mainHome.html">Home</a></li>
+          <li><a href="home.html">Home</a></li>
           <li><a href="availableCar.html">Available Cars</a></li>
-          <li class="current"><a href="adminform.html">Admin</a></li>
+          <li class="current"><a href="home.html">Admin</a></li>
         </ul>
       </div><!--close menubar-->	
     </nav>	

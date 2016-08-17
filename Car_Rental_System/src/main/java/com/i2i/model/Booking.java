@@ -3,6 +3,7 @@
  */
 package com.i2i.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -46,6 +47,10 @@ public class Booking {
 	
 	@Column(name="address")
 	private String address;
+	
+	@Column(name="createdAt")
+    private Timestamp createdAt;
+	
 	/**
 	 * @param id
 	 * @param userId
@@ -150,4 +155,20 @@ public class Booking {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	/**
+	 * @return the createdAt
+	 */
+	public Timestamp getCreatedAt() {
+		return createdAt;
+	}
+
+	/**
+	 * @param createdAt the createdAt to set
+	 */
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	
 }
