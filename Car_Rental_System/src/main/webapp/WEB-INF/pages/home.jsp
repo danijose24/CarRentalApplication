@@ -35,7 +35,7 @@
         <ul id="nav">
           <li class="current"><a href="home.html">Home</a></li>
           <li><a href="availableCar.html">Available Cars</a></li>
-          <li><a href="logout.jsp">LogOut</a></li>
+          <li><a href="logout.jsp">Log Out</a></li>
         </ul>
       </div><!--close menubar-->	
     </nav>

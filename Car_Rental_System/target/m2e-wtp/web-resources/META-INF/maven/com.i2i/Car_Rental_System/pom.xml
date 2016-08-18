@@ -68,7 +68,7 @@
         <amp.genericCore>true</amp.genericCore>
         <amp.fullSource>false</amp.fullSource>
         <dao.framework>hibernate</dao.framework>
-        <db.name>CarRentalApp</db.name>
+        <db.name>Car_Rental_System</db.name>
         <web.framework>spring</web.framework>
         <jdbc.password>root</jdbc.password>
         <!-- Framework/Plugin versions -->

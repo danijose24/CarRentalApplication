@@ -30,9 +30,8 @@
         <ul id="nav">
           <li><a href="home.html">Home</a></li>
           <li><a href="availableCar.html">Available Cars</a></li>
-     <!--   <li><a href="logIn.html">LogIn</a></li>  -->
-          <li class="current"><a href="logIn.html">Book A Car</a></li>
-     <!--   <li><a href="mainHome.html">Log Out</a></li>  -->
+          <li class="current"><a>Book A Car</a></li>
+       <li><a href="logout.jsp">Log Out</a></li>  
        </ul>
       </div><!--close menubar-->	
    
@@ -102,6 +101,7 @@
     
     
       </center>
+      
       <script type="text/javascript">
            $(document).ready(function() {
            $('.pickupDate').datepicker({format: "mm/dd/yyyy", weekStart: "0"});

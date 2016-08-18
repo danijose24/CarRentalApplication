@@ -36,7 +36,7 @@
         <ul id="nav">
           <li><a href="home.html">Home</a></li>
           <li class="current"><a href="#">Payment</a></li>
-          
+          <li><a href="logout.jsp">Log Out</a></li>
         </ul>
       </div><!--close menubar-->	
     </nav>	

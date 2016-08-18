@@ -381,7 +381,8 @@ ol li
   margin-right: auto;}
 
 #main
-{ background: #1D1D1D url(../images/pattern.png) repeat;}
+{ background: #1D1D1D url(../images/pattern.png) repeat;
+}
   
 header
 { background: #1D1D1D url(../images/pattern.png) repeat;
